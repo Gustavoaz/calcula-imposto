@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "10d80686-c58e-4ad6-b7ba-47a3a1f2d3f1",
+		"name": "CalculaJuros",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Calcula Juros",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f826a19-bf7f-4db0-9a88-39713257912a",
+						"exec": [
+							"pm.environment.set(\"valorinicial\", 100);\r",
+							"pm.environment.set(\"meses\", 5);\r",
+							"\r",
+							"pm.test(\"Success\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.expect(pm.response.text()).to.equal(\"105.10\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"ValorInicial_Error\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"    pm.expect(pm.response.text()).to.equal(\"Value cannot be null.\\r\\nParameter name: ValorInicial\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Meses_Error\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"    pm.expect(pm.response.text()).to.equal(\"Value cannot be null.\\r\\nParameter name: Meses\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/Api/JurosComposto/calculajuros?valorinicial={{valorinicial}}&meses={{meses}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"Api",
+						"JurosComposto",
+						"calculajuros"
+					],
+					"query": [
+						{
+							"key": "valorinicial",
+							"value": "{{valorinicial}}"
+						},
+						{
+							"key": "meses",
+							"value": "{{meses}}"
+						}
+					]
+				},
+				"description": "Calcula juros compostos"
+			},
+			"response": [
+				{
+					"name": "Calcula Juros",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/Api/JurosComposto/calculajuros?valorinicial={{valorinicial}}&meses={{meses}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"Api",
+								"JurosComposto",
+								"calculajuros"
+							],
+							"query": [
+								{
+									"key": "valorinicial",
+									"value": "{{valorinicial}}"
+								},
+								{
+									"key": "meses",
+									"value": "{{meses}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 17 May 2019 18:52:57 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "105.1"
+				}
+			]
+		}
+	]
+}

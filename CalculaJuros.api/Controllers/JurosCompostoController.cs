@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CalculaJuros.Domain.Contract.Dto;
+using CalculaJuros.Domain.Contract.Interface;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,10 +13,31 @@ namespace CalculaJuros.Api.Controllers
     [ApiController]
     public class JurosCompostoController : ControllerBase
     {
-        [HttpGet()]
-        public ActionResult<string> CalculaJuro()
+        private readonly IJurosCompostoService service;
+
+        public JurosCompostoController(IJurosCompostoService Service)
         {
-            return "teste 3";
+            service = Service;
+        }
+
+        [HttpGet("calculajuros")]
+        public async Task<ActionResult> CalculaJuro([FromQuery] decimal valorinicial, int meses)
+        {
+            var response = 0M;
+            try
+            {
+                response = await service.CalculaJuros(new DtoJurosCompostoCalculaJurosRequest()
+                {
+                    ValorInicial = valorinicial,
+                    Meses = meses
+                });
+            }
+            catch (ArgumentNullException e)
+            {
+                return BadRequest(e.Message);
+            }
+
+            return Ok(response);
         }
     }
 }
