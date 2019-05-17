@@ -14,7 +14,7 @@ namespace CalculaJuros.Api.Controllers
         [HttpGet()]
         public ActionResult<string> Get()
         {            
-            return Ok("https://github.com/Gustavoaz/calcula-imposto/");
+            return Ok("https://github.com/Gustavoaz/calcula-juros");
         }
     }
 }
