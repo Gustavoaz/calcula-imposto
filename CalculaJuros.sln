@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28822.285
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculaImposto.Api", "CalculaImposto.api\CalculaImposto.Api.csproj", "{52EB6FBE-22A8-46F0-8F9E-16AF95CA8B10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculaJuros.Api", "CalculaJuros.api\CalculaJuros.Api.csproj", "{52EB6FBE-22A8-46F0-8F9E-16AF95CA8B10}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{4011602A-22CA-4BC5-BDA3-1DD984D3A6BA}"
 EndProject
@@ -11,9 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{5E1B9F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{66468664-0894-4250-831C-7211D1C089ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculaImposto.Domain", "CalculaImposto.Domain\CalculaImposto.Domain.csproj", "{3123D561-B9E6-43FF-B51D-F43C85714FC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculaJuros.Domain", "CalculaJuros.Domain\CalculaJuros.Domain.csproj", "{3123D561-B9E6-43FF-B51D-F43C85714FC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculaImposto.Domain.Test", "CalculaImposto.Domain.Test\CalculaImposto.Domain.Test.csproj", "{A41F5E53-2C46-4D32-9B7C-7CF8A516871D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculaJuros.Domain.Test", "CalculaJuros.Domain.Test\CalculaJuros.Domain.Test.csproj", "{A41F5E53-2C46-4D32-9B7C-7CF8A516871D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
